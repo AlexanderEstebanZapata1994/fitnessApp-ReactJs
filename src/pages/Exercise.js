@@ -3,7 +3,7 @@ import React from 'react'
 //Importamos los componentes
 import Card from '../components/Card'
 import Title from '../components/Title'
-
+import AddButton from '../components/AddButton'
 
 class Exercises extends React.Component{
 
@@ -60,6 +60,8 @@ class Exercises extends React.Component{
                         )
                    })
                }
+
+               <AddButton/>
             </div>
         )
     }
