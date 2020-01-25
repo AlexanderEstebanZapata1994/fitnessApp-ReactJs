@@ -6,6 +6,7 @@
 .Fitness-Card {
     max-height: 140px;
     max-width: 520px;
+    margin: 30px;
 }
 .Fitness-Card-Info {
     padding-left: 0;
