@@ -6,20 +6,20 @@ class Card extends React.Component{
 
 
     render(){
-        const {title, description, img, leftColor, rightColor} = this.props
+        const {txtTitulo, txtDescripcion, txtImagenRuta, txtColorIzquierdo, txtColorDerecho} = this.props
         return (
             <div className="card mx-auto Fitness-Card"style={{
-                backgroundImage:`url(${CircleImg}), linear-gradient(to right, ${leftColor}, ${rightColor})`
+                backgroundImage:`url(${CircleImg}), linear-gradient(to right, ${txtColorIzquierdo}, ${txtColorDerecho})`
             }}
             >
                 <div className="card-body">
                     <div className="row center">
-                        <div className="col-6">
-                            <img src={img} alt="Technique Guides"/>
+                        <div className="col-4">
+                            <img src={txtImagenRuta} alt={txtTitulo}/>
                         </div>
-                        <div className="col-6 Fitness-Card-Info">
-                            <h1>{title}</h1>
-                            <p>{description}</p>
+                        <div className="col-8 Fitness-Card-Info">
+                            <h1>{txtTitulo}</h1>
+                            <p>{txtDescripcion}</p>
                         </div>
                     </div>
                 </div>
