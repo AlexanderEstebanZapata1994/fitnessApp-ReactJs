@@ -6,16 +6,17 @@ import Card from '../components/Card'
 class ExerciseNew extends React.Component{
 
 
-state = {
-    form : {
-        txtTitulo:'', 
-        txtDescripcion:'',
-        txtImagenRuta:'',
-        txtColorIzquierdo:'',
-        txtColorDerecho:''
+    state = {
+        form : {
+            txtTitulo:'', 
+            txtDescripcion:'',
+            txtImagenRuta:'',
+            txtColorIzquierdo:'',
+            txtColorDerecho:''
+        }
     }
-}
-
+    
+    //Eventos del formulario
     handleChange = (e) =>{        
         this.setState({
             form:{
@@ -23,6 +24,29 @@ state = {
                 [e.target.name] : e.target.value
             }
         })
+    }
+
+    handleSubmit = async e => {
+        e.preventDefault()
+        try {
+            let config = {
+                method : 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(this.state.form)
+            }
+            console.log(config.body)
+            const url = 'http://localhost:8000/api/exercises'
+            let res = await fetch(url, config)
+            let json = await res.json()
+
+
+
+        } catch (error) {
+            
+        }
     }
 
     render(){
@@ -42,6 +66,7 @@ state = {
                         <div className="col-md">
                             <ExerciseForm
                                 onChange={this.handleChange}
+                                onSubmit={this.handleSubmit}
                                 form={this.state.form}
                             />
                         </div>

@@ -2,20 +2,12 @@ import React from 'react'
 
 class ExerciseForm extends React.Component{
 
-
-    //Eventos del formulario
-    handleSubmit = (e) => {
-        e.preventDefault()
-        console.log(this.state)
-    }
-
-    
     render(){
-        const {onChange, form} = this.props
+        const {onChange, onSubmit, form} = this.props
 
         return(
             <div className="container">
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={onSubmit}>
                     <div className="form-group row">
                         <label htmlFor="txtTitulo" className="col-md-12">Titulo</label>
                         <input type="text" className="form-control col-md-12" name="txtTitulo" placeholder="Ingrese un titulo" onChange={onChange} value={form.txtTitle}></input>
