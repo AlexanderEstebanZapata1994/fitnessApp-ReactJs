@@ -2,6 +2,7 @@ import React from 'react'
 
 import FatalError from './500'
 import ExerciseNew from './ExerciseNew'
+import Loading from '../components/Loading'
 
 
 class ExerciseNewContainer extends React.Component{
@@ -44,9 +45,9 @@ class ExerciseNewContainer extends React.Component{
                 body: JSON.stringify(this.state.form)
             }
             console.log(config.body)
-            const url = 'http://localhost:8000/api/exercises'
-            let res = await fetch(url, config)
-            let json = await res.json()
+            //const url = 'http://localhost:8000/api/exercises'
+            //let res = await fetch(url, config)
+            //let json = await res.json()
 
             this.setState({
                 loading : false
@@ -65,7 +66,7 @@ class ExerciseNewContainer extends React.Component{
 
     render(){
         if (this.state.loading) 
-            return <FatalError />
+            return <Loading />
         
         if (this.state.error) 
             return <FatalError />

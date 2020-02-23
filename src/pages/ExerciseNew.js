@@ -1,7 +1,9 @@
 import React from 'react';
 
+//Importamos los componentes
 import ExerciseForm from '../components/ExerciseForm'
 import Card from '../components/Card'
+
 const ExerciseNew = ({form, onChange, onSubmit}) =>(
     <div className="jumbotron">
         <div className="container">
