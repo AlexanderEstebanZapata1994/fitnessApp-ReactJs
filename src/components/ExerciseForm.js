@@ -10,11 +10,11 @@ class ExerciseForm extends React.Component{
                 <form onSubmit={onSubmit}>
                     <div className="form-group row">
                         <label htmlFor="txtTitulo" className="col-md-12">Titulo</label>
-                        <input type="text" className="form-control col-md-12" name="txtTitulo" placeholder="Ingrese un titulo" onChange={onChange} value={form.txtTitle}></input>
+                        <input type="text" className="form-control col-md-12" name="txtTitulo" placeholder="Ingrese un titulo" maxLength="25" onChange={onChange} value={form.txtTitle}></input>
                     </div>
                     <div className="form-group row">
                         <label htmlFor="txtDescripcion" className="col-md-12">Descripción</label>
-                        <input type="text" className="form-control col-md-12" name="txtDescripcion" placeholder="Ingrese la descripción del ejercicio" onChange={onChange} value={form.txtDescripcion}></input>
+                        <textarea type="text" className="form-control col-md-12" name="txtDescripcion" placeholder="Ingrese la descripción del ejercicio" onChange={onChange} value={form.txtDescripcion} rows="4" cols="50" maxLength="300"></textarea>
                     </div>
                     <div className="form-group row">
                         <label htmlFor="txtImagenRuta" className="col-md-12">Ruta imagen</label>

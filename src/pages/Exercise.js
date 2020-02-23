@@ -5,7 +5,6 @@ import Title from '../components/Title'
 import ExerciseList from '../components/ExerciseList'
 import AddButton from '../components/AddButton'
 import Loading from '../components/Loading'
-import FatalError500 from '../pages/500'
 
 class Exercises extends React.Component{
 
@@ -33,11 +32,7 @@ class Exercises extends React.Component{
 
     render(){
         if (this.state.loading) 
-            return <Loading />
-
-        if (this.state.error) 
-            return <FatalError500 />
-        
+            return <Loading />        
         
         return(
             <div>
